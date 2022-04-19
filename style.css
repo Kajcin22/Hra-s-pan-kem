@@ -1,28 +1,28 @@
 :root {
-	--pozadi: lightskyblue;
-	--score: red;
+  --pozadi: lightskyblue;
+  --score: red;
 }
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:after,
 *:before {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	height: 100vh;
-	background-color: var(--pozadi);
-	background-repeat: repeat;
-	background-image: url('obrazky/pozadi/geometry.png');
-	border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--pozadi);
+  background-repeat: repeat;
+  background-image: url('obrazky/pozadi/geometry.png');
+  border: 1px solid black;
 
-	/*  vyzkoušej i jiná pozadí :)
+  /*  vyzkoušej i jiná pozadí :)
 	background-image: url('obrazky/pozadi/geometry.png');
 	background-image: url('obrazky/pozadi/round.png');
 	background-image: url('obrazky/pozadi/china.png');
@@ -39,13 +39,13 @@ body {
 }
 
 #score {
-	position: absolute;
-	top: 50px;
-	left: 50px;
-	font-family: 'Press Start 2P', sans-serif;
-	font-size: 36px;
-	z-index: 999;
-	color: var(--score);
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 36px;
+  z-index: 999;
+  color: var(--score);
 }
 
 #panacek,
@@ -56,10 +56,58 @@ body {
 #moucha2,
 #minceStribrna,
 #minceBronz {
-	position: absolute;
+  position: absolute;
 }
 
-
 #panacek {
-	z-index: 1;
+  z-index: 1;
+}
+
+.nabidka {
+  display: block;
+  margin: auto;
+  font-family: 'Press Start 2P', sans-serif;
+  color: rgb(195, 11, 11);
+  text-align: center;
+  background-image: url('obrazky/pozadi/china.png');
+  border: 2px rgb(94, 0, 0) inset;
+  border-radius: 7px;
+  margin-top: 50px;
+  padding: 5%;
+  gap: 100px;
+  max-width: 55%;
+}
+
+.nabidka h1 {
+  padding-bottom: 20px;
+}
+
+.nabidka p {
+  padding: 2em;
+}
+
+.nabidka__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.nabidka__buttons-pravidla,
+.nabidka__buttons-start {
+  background-color: rgb(165, 1, 1);
+  padding: 1em;
+}
+
+.nabidka__buttons-pravidla:hover,
+.nabidka__buttons-start:hover {
+  background-color: rgb(232, 23, 23);
+  cursor: pointer;
+}
+
+a {
+  font-family: 'Press Start 2P', sans-serif;
+  text-decoration: none;
+  color: rgb(243, 211, 211);
+  border-radius: 7px;
 }
