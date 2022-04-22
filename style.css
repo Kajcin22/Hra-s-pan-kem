@@ -20,7 +20,6 @@ body {
   background-color: var(--pozadi);
   background-repeat: repeat;
   background-image: url('obrazky/pozadi/geometry.png');
-  border: 1px solid black;
 
   /*  vyzkoušej i jiná pozadí :)
 	background-image: url('obrazky/pozadi/geometry.png');
@@ -76,6 +75,7 @@ body {
   padding: 5%;
   gap: 100px;
   max-width: 55%;
+  margin-bottom: 50px;
 }
 
 .nabidka h1 {
@@ -86,11 +86,20 @@ body {
   padding: 2em;
 }
 
+.nabidka ul {
+  padding: 2em;
+  text-align: justify;
+}
+
+.nabidka li {
+  padding: 0.5rem;
+  line-height: 1.5em;
+}
+
 .nabidka__buttons {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 50px;
 }
 
 .nabidka__buttons-pravidla,
@@ -110,4 +119,17 @@ a {
   text-decoration: none;
   color: rgb(243, 211, 211);
   border-radius: 7px;
+}
+
+button {
+  background-color: rgb(165, 1, 1);
+}
+
+button:hover {
+  background-color: rgb(232, 23, 23);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }

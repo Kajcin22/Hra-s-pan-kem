@@ -25,12 +25,17 @@ const slimak = document.querySelector('#slimak');
 const slimak2 = document.querySelector('#slimak2');
 const moucha = document.querySelector('#moucha');
 const moucha2 = document.querySelector('#moucha2');
+
 const skore = document.querySelector('#score');
 const zivot = document.querySelector('#zivot');
+
 const hudba = document.querySelector('#hudba');
 const zvukmince = document.querySelector('#zvukmince');
 const zvukfanfara = document.querySelector('#zvukfanfara');
 const zvukZraneni = document.querySelector('#zvukzraneni');
+
+const oznameni = document.querySelector('#oznameni');
+const hra = document.querySelector('#hra');
 
 const body = document.querySelector('body');
 
@@ -435,6 +440,10 @@ function panacekStop(event) {
 }
 
 /* --------------------------- střet s nepřáteli ---------------------------------- */
+const novaHraButton = () => {
+  oznameni.innerHTML += `<button><a href="hra.html">Nová hra?</a></button><br><button><a href="uvodni.html">Hlavní nabídka :(</a></button>`;
+};
+
 function zraneni() {
   zvukZraneni.play();
   zivotHodnota -= 1;
@@ -454,12 +463,17 @@ function zraneni() {
     zivot.src = 'obrazky/srdce-0.png';
   }
   if (zivotHodnota < 0) {
-    alert('Chcípnuls!');
+    //alert('Chcípnuls!');
+    oznameni.classList.remove('hidden');
+    hra.classList.add('hidden');
+    skore.classList.add('hidden');
+    zivot.classList.add('hidden');
+    oznameni.innerHTML = `<h1>Sežrali tě slimáci!!</h1>`;
+    setTimeout(novaHraButton, 3000);
     zivotHodnota = 5;
     skoreHodnota = 0;
     skore.textContent = '0';
     zivot.src = 'obrazky/srdce-5.png';
-    resetGame();
     return;
   }
 }
@@ -474,10 +488,14 @@ function kradeni() {
   }
   if (skoreHodnota < 0) {
     //bez peněz se nedá žít
-    alert('Prohráls!');
+    oznameni.classList.remove('hidden');
+    hra.classList.add('hidden');
+    skore.classList.add('hidden');
+    zivot.classList.add('hidden');
+    oznameni.innerHTML = `<h1>Byls oloupen mouchami!!</h1>`;
+    setTimeout(novaHraButton, 3000);
     skore.textContent = '0';
     skoreHodnota = 0;
-    resetGame();
     return;
   }
 }
